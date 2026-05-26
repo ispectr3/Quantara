@@ -1,0 +1,19 @@
+# Quantara
+
+> Plataforma de wealth intelligence: simulador de investimentos, recomendação de carteiras e IA private banking que consolida o melhor de 12 grandes casas.
+
+Quantara é um produto para investidores private (HNW/UHNW) que cruza recomendações de XP, BTG, Itaú Personnalité, Bradesco Prime, Santander Select, Safra Private, Inter Invest, J.P. Morgan Private, Julius Baer, Credit Suisse HG, UBS e BNP Paribas Wealth. Oferece análise de mercado Brasil + EUA, cripto, seguros private, suitability e um Especialista IA conversacional.
+
+## Páginas
+- [Visão de Mercado](/): dashboard com Ibovespa, S&P 500, dólar, top ações e alocação sugerida.
+- [Private Banking](/carteiras): comparativo das carteiras recomendadas por 12 instituições + renda fixa em destaque.
+- [Mundo EUA](/internacional): desk Wall Street com S&P 500, ETFs e BDRs.
+- [Cripto Ativos](/cripto): BTC, ETH e blue chips digitais com alocação sugerida.
+- [Seguros](/seguros): catálogo de seguros private (vida USD, residencial HNW, cyber, D&O, K&R).
+- [Patrimônio](/patrimonio): visão consolidada de patrimônio líquido, imóveis, offshore e alternativos.
+- [Atualidades](/noticias): feed categorizado de política, macro Brasil e internacional.
+- [Perfil do Investidor](/perfil): suitability dinâmico com 6 perguntas sorteadas.
+- [Especialista IA](/advisor): chat com IA que recomenda alocações cruzando as 12 casas.
+
+## Optional
+- [Página inicial](/): mesmo conteúdo de "Visão de Mercado".

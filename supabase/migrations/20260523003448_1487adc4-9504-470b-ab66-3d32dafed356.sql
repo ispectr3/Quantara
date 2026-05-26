@@ -1,0 +1,1 @@
+ALTER TABLE public.user_goals ALTER COLUMN horizon_years TYPE numeric USING horizon_years::numeric;
