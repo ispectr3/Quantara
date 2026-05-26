@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ispectr3/Quantara/main/quentara%20social%20image.png" alt="Quantara" width="100%" />
+  <img src="https://raw.githubusercontent.com/ispectr3/Quantara/main/quantara-social-image.png" alt="Quantara" width="100%" />
 </p>
 
 <h1 align="center">Quantara · Wealth Intelligence</h1>
