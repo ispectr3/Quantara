@@ -87,35 +87,71 @@ export const Route = createFileRoute("/api/chat")({
             );
           }
 
-          const key = process.env.GEMINI_API_KEY;
-          if (!key) return new Response(JSON.stringify({ error: "GEMINI_API_KEY ausente" }), { status: 500 });
+          const geminiKey = process.env.GEMINI_API_KEY;
+          const groqKey = process.env.GROQ_API_KEY;
 
           const contextLine = context && (context.perfil || context.patrimonio || context.objetivos || context.composicao)
             ? `\n\n## Contexto do cliente\n- Perfil de suitability: ${context.perfil ?? "não informado"}\n- Patrimônio total: ${context.patrimonio ?? "não informado"}\n- Composição: ${context.composicao ?? "não informada"}\n- Objetivos: ${context.objetivos ?? "não informados"}`
             : "";
 
-          const res = await fetch("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${key}`,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              model: "gemini-2.5-flash",
-              stream: true,
-              messages: [
-                { role: "system", content: SYSTEM_PROMPT + contextLine },
-                ...messages,
-              ],
-            }),
-          });
+          let res: Response | null = null;
+          let usedFallback = false;
+
+          if (geminiKey) {
+            try {
+              res = await fetch("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", {
+                method: "POST",
+                headers: {
+                  Authorization: `Bearer ${geminiKey}`,
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  model: "gemini-2.5-flash",
+                  stream: true,
+                  messages: [
+                    { role: "system", content: SYSTEM_PROMPT + contextLine },
+                    ...messages,
+                  ],
+                }),
+              });
+              if (!res.ok) {
+                console.warn("Gemini API returned error status:", res.status);
+                res = null;
+              }
+            } catch (e) {
+              console.error("Gemini API call failed:", e);
+              res = null;
+            }
+          }
+
+          if (!res) {
+            if (!groqKey) {
+              return new Response(JSON.stringify({ error: "IA indisponível no momento (GEMINI_API_KEY e GROQ_API_KEY ausentes)" }), { status: 500 });
+            }
+            console.log("Using Groq fallback...");
+            usedFallback = true;
+            res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${groqKey}`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                model: "llama-3.3-70b-versatile",
+                stream: true,
+                messages: [
+                  { role: "system", content: SYSTEM_PROMPT + contextLine },
+                  ...messages,
+                ],
+              }),
+            });
+          }
 
           if (!res.ok) {
             if (res.status === 429) return new Response(JSON.stringify({ error: "Limite de requisições atingido. Tente novamente em instantes." }), { status: 429 });
-            if (res.status === 402) return new Response(JSON.stringify({ error: "Créditos esgotados. Adicione saldo no workspace Lovable." }), { status: 402 });
             const txt = await res.text();
-            console.error("Gateway error", res.status, txt);
-            return new Response(JSON.stringify({ error: "Erro no gateway de IA" }), { status: 500 });
+            console.error("API error", res.status, txt);
+            return new Response(JSON.stringify({ error: `Erro no serviço de IA (${usedFallback ? "Groq" : "Gemini"})` }), { status: 500 });
           }
 
           return new Response(res.body, {
