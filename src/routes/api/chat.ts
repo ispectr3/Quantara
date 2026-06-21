@@ -87,21 +87,21 @@ export const Route = createFileRoute("/api/chat")({
             );
           }
 
-          const key = process.env.LOVABLE_API_KEY;
-          if (!key) return new Response(JSON.stringify({ error: "LOVABLE_API_KEY ausente" }), { status: 500 });
+          const key = process.env.GEMINI_API_KEY;
+          if (!key) return new Response(JSON.stringify({ error: "GEMINI_API_KEY ausente" }), { status: 500 });
 
           const contextLine = context && (context.perfil || context.patrimonio || context.objetivos || context.composicao)
             ? `\n\n## Contexto do cliente\n- Perfil de suitability: ${context.perfil ?? "não informado"}\n- Patrimônio total: ${context.patrimonio ?? "não informado"}\n- Composição: ${context.composicao ?? "não informada"}\n- Objetivos: ${context.objetivos ?? "não informados"}`
             : "";
 
-          const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+          const res = await fetch("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", {
             method: "POST",
             headers: {
               Authorization: `Bearer ${key}`,
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              model: "google/gemini-3-flash-preview",
+              model: "gemini-2.5-flash",
               stream: true,
               messages: [
                 { role: "system", content: SYSTEM_PROMPT + contextLine },
