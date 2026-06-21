@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { TrendingUp, Loader2, AlertTriangle, Mail, Lock, User, ShieldCheck, Sparkles, ArrowRight } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { lovable } from "@/integrations/lovable/index";
 import { useAuth } from "@/lib/auth";
 
 export const Route = createFileRoute("/login")({
@@ -89,11 +90,8 @@ function Login() {
   const google = async () => {
     setBusy(true); setErr(null);
     const back = computeRedirect();
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: window.location.origin + back }
-    });
-    if (error) { setErr(error.message); setBusy(false); }
+    const r = await lovable.auth.signInWithOAuth("google", { redirect_uri: window.location.origin + back });
+    if (r.error) { setErr(r.error.message); setBusy(false); }
   };
 
   return (
