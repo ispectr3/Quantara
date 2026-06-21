@@ -54,10 +54,14 @@ export const Route = createFileRoute("/api/chat")({
           const token = authHeader?.replace(/^Bearer\s+/i, "");
           if (token) {
             try {
-              const sb = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_PUBLISHABLE_KEY!, {
-                global: { headers: { Authorization: `Bearer ${token}` } },
-                auth: { persistSession: false, autoRefreshToken: false },
-              });
+              const sb = createClient(
+                process.env.SUPABASE_URL || "https://xinheegtluxknehxstwm.supabase.co",
+                process.env.SUPABASE_PUBLISHABLE_KEY || "sb_publishable_8xJBZaMJM7vAZ0SySB4jlQ_hBmDeMpC",
+                {
+                  global: { headers: { Authorization: `Bearer ${token}` } },
+                  auth: { persistSession: false, autoRefreshToken: false },
+                }
+              );
               await sb.auth.getUser();
             } catch { /* ignore */ }
           }

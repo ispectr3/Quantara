@@ -12,8 +12,8 @@ export const subscribeNewsletter = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }) => {
     const sb = createClient(
-      process.env.SUPABASE_URL!,
-      process.env.SUPABASE_PUBLISHABLE_KEY!,
+      process.env.SUPABASE_URL || "https://xinheegtluxknehxstwm.supabase.co",
+      process.env.SUPABASE_PUBLISHABLE_KEY || "sb_publishable_8xJBZaMJM7vAZ0SySB4jlQ_hBmDeMpC",
       { auth: { persistSession: false, autoRefreshToken: false } },
     );
     const { error } = await sb
