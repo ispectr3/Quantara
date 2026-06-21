@@ -4,9 +4,9 @@ export const Route = createFileRoute("/privacidade")({
   component: Privacidade,
   head: () => ({
     meta: [
-      { title: "Política de Privacidade · Quantara" },
+      { title: "Política de Privacidade" },
       { name: "description", content: "Como a Quantara coleta, utiliza e protege os dados dos investidores do segmento private." },
-      { property: "og:title", content: "Política de Privacidade · Quantara" },
+      { property: "og:title", content: "Política de Privacidade" },
       { property: "og:description", content: "Como a Quantara coleta, utiliza e protege seus dados." },
       { property: "og:url", content: "/privacidade" },
     ],

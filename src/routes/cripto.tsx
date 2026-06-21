@@ -11,9 +11,9 @@ export const Route = createFileRoute("/cripto")({
   component: Cripto,
   head: () => ({
     meta: [
-      { title: "Cripto Ativos · Quantara" },
+      { title: "Cripto Ativos" },
       { name: "description", content: "Bitcoin, Ethereum e principais criptoativos em tempo real, com leitura institucional." },
-      { property: "og:title", content: "Cripto Ativos · Quantara" },
+      { property: "og:title", content: "Cripto Ativos" },
       { property: "og:description", content: "Mercado cripto com leitura private banking." },
       { property: "og:url", content: "/cripto" },
     ],

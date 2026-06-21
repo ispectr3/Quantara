@@ -8,9 +8,9 @@ export const Route = createFileRoute("/comparador")({
   component: Comparador,
   head: () => ({
     meta: [
-      { title: "Comparador de Carteiras · Quantara" },
+      { title: "Comparador de Carteiras" },
       { name: "description", content: "Compare carteiras de bancos privados lado a lado: score, ticket mínimo, horizonte e alocação." },
-      { property: "og:title", content: "Comparador de Carteiras · Quantara" },
+      { property: "og:title", content: "Comparador de Carteiras" },
       { property: "og:description", content: "Carteiras das principais casas lado a lado." },
       { property: "og:url", content: "/comparador" },
     ],

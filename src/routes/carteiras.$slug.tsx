@@ -15,9 +15,9 @@ export const Route = createFileRoute("/carteiras/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.bank ?? "Carteira"} · Quantara` },
+      { title: `${loaderData?.bank ?? "Carteira"}` },
       { name: "description", content: `Carteira recomendada por ${loaderData?.bank ?? "private bank"}: alocação, tese e ativos principais.` },
-      { property: "og:title", content: `${loaderData?.bank ?? "Carteira"} · Quantara` },
+      { property: "og:title", content: `${loaderData?.bank ?? "Carteira"}` },
       { property: "og:description", content: `Alocação institucional e tese da carteira ${loaderData?.bank ?? ""}.` },
       { property: "og:url", content: `/carteiras/${loaderData?.slug ?? ""}` },
       { property: "og:type", content: "article" },

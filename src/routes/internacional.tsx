@@ -12,9 +12,9 @@ export const Route = createFileRoute("/internacional")({
   component: Mundo,
   head: () => ({
     meta: [
-      { title: "Bolsa Americana · Quantara" },
+      { title: "Bolsa Americana" },
       { name: "description", content: "S&P 500, Wall Street e teses globais consolidadas das principais casas internacionais." },
-      { property: "og:title", content: "Bolsa Americana · Quantara" },
+      { property: "og:title", content: "Bolsa Americana" },
       { property: "og:description", content: "Mercado dos EUA com leitura institucional." },
       { property: "og:url", content: "/internacional" },
     ],

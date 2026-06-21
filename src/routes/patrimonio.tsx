@@ -11,7 +11,7 @@ import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/patrimonio")({
   component: Patrimonio,
-  head: () => ({ meta: [{ title: "Patrimônio , Quantara" }] }),
+  head: () => ({ meta: [{ title: "Patrimônio" }] }),
 });
 
 function Patrimonio() {

@@ -6,7 +6,7 @@ import { Shield, MapPin, Globe2, Monitor, RefreshCw, Loader2 } from "lucide-reac
 
 export const Route = createFileRoute("/seguranca")({
   component: Seguranca,
-  head: () => ({ meta: [{ title: "Segurança & Acessos , Quantara" }] }),
+  head: () => ({ meta: [{ title: "Segurança & Acessos" }] }),
 });
 
 type AccessLog = {

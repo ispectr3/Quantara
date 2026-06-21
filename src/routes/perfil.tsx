@@ -8,7 +8,7 @@ import { useAuth } from "@/lib/auth";
 
 export const Route = createFileRoute("/perfil")({
   component: Perfil,
-  head: () => ({ meta: [{ title: "Perfil do Investidor , Quantara" }] }),
+  head: () => ({ meta: [{ title: "Perfil do Investidor" }] }),
 });
 
 const N = 6;

@@ -8,7 +8,7 @@ import { useAuth } from "@/lib/auth";
 export const Route = createFileRoute("/login")({
   component: Login,
   validateSearch: (s: Record<string, unknown>) => ({ redirect: typeof s.redirect === "string" ? s.redirect : undefined }),
-  head: () => ({ meta: [{ title: "Entrar · Quantara" }] }),
+  head: () => ({ meta: [{ title: "Entrar" }] }),
 });
 
 const REDIRECT_KEY = "quantara_post_login_redirect";

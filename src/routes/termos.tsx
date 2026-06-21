@@ -4,9 +4,9 @@ export const Route = createFileRoute("/termos")({
   component: Termos,
   head: () => ({
     meta: [
-      { title: "Termos de Uso · Quantara" },
+      { title: "Termos de Uso" },
       { name: "description", content: "Condições gerais de uso da plataforma Quantara para investidores do segmento private." },
-      { property: "og:title", content: "Termos de Uso · Quantara" },
+      { property: "og:title", content: "Termos de Uso" },
       { property: "og:description", content: "Condições gerais de uso da plataforma Quantara." },
       { property: "og:url", content: "/termos" },
     ],

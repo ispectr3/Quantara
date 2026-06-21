@@ -76,10 +76,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Quantara · Wealth Intelligence" },
+      { title: "Quantara" },
       { name: "description", content: "Quantara consolida as carteiras das principais casas de wealth management do Brasil em uma plataforma de inteligência para o segmento private." },
       { name: "author", content: "Quantara" },
-      { property: "og:title", content: "Quantara · Wealth Intelligence" },
+      { property: "og:title", content: "Quantara" },
       { property: "og:description", content: "Inteligência de mercado consolidada para investidores private. XP, BTG, J.P. Morgan e mais, em uma visão unificada." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Quantara" },
@@ -89,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/WQ6PCQmOU7QdLlzSFccOxi43VMt1/social-images/social-1779568368100-quantara_social_.webp" },
       { name: "twitter:site", content: "@quantarainvest" },
-      { name: "twitter:title", content: "Quantara · Wealth Intelligence" },
+      { name: "twitter:title", content: "Quantara" },
       { name: "twitter:description", content: "Inteligência de mercado consolidada para investidores private. XP, BTG, J.P. Morgan e mais, em uma visão unificada." },
     ],
     links: [

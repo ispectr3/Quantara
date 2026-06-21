@@ -5,9 +5,9 @@ export const Route = createFileRoute("/contato")({
   component: Contato,
   head: () => ({
     meta: [
-      { title: "Contato · Quantara" },
+      { title: "Contato" },
       { name: "description", content: "Fale com a equipe da Quantara e agende uma conversa com nossos especialistas em wealth management." },
-      { property: "og:title", content: "Contato · Quantara" },
+      { property: "og:title", content: "Contato" },
       { property: "og:description", content: "Agende uma conversa com nossos especialistas." },
       { property: "og:url", content: "/contato" },
     ],

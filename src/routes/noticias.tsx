@@ -12,9 +12,9 @@ export const Route = createFileRoute("/noticias")({
   component: Noticias,
   head: () => ({
     meta: [
-      { title: "Atualidades · Quantara" },
+      { title: "Atualidades" },
       { name: "description", content: "Acompanhe o contexto macroeconômico e os movimentos do mercado que impactam patrimônios relevantes. Inteligência de mercado consolidada pela Quantara." },
-      { property: "og:title", content: "Atualidades · Quantara" },
+      { property: "og:title", content: "Atualidades" },
       { property: "og:description", content: "Acompanhe o contexto macroeconômico e os movimentos do mercado que impactam patrimônios relevantes." },
       { property: "og:url", content: "/noticias" },
     ],

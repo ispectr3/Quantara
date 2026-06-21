@@ -11,7 +11,7 @@ import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/meu-patrimonio")({
   component: MeuPatrimonio,
-  head: () => ({ meta: [{ title: "Minha Carteira , Quantara" }] }),
+  head: () => ({ meta: [{ title: "Minha Carteira" }] }),
 });
 
 function MeuPatrimonio() {

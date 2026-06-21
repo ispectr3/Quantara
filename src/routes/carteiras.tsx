@@ -8,9 +8,9 @@ export const Route = createFileRoute("/carteiras")({
   component: Carteiras,
   head: () => ({
     meta: [
-      { title: "Portfolios · Quantara" },
+      { title: "Portfolios" },
       { name: "description", content: "Carteiras recomendadas pelos maiores private banks: BTG, XP, J.P. Morgan, UBS, Julius Baer e mais." },
-      { property: "og:title", content: "Portfolios · Quantara" },
+      { property: "og:title", content: "Portfolios" },
       { property: "og:description", content: "Wealth architecture por tese de investimento." },
       { property: "og:url", content: "/carteiras" },
     ],

@@ -9,9 +9,9 @@ export const Route = createFileRoute("/acao/$ticker")({
   component: AcaoDetail,
   head: ({ params }) => ({
     meta: [
-      { title: `${params.ticker} · Quantara` },
+      { title: `${params.ticker}` },
       { name: "description", content: `Análise institucional de ${params.ticker}: score Quantara, tese, consenso das casas e riscos.` },
-      { property: "og:title", content: `${params.ticker} · Quantara` },
+      { property: "og:title", content: `${params.ticker}` },
       { property: "og:description", content: `Tese, fundamentos e consenso institucional para ${params.ticker}.` },
       { property: "og:url", content: `/acao/${params.ticker}` },
       { property: "og:type", content: "article" },

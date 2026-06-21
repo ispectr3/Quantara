@@ -15,9 +15,9 @@ export const Route = createFileRoute("/advisor")({
   component: Advisor,
   head: () => ({
     meta: [
-      { title: "Especialista IA , Quantara" },
+      { title: "Especialista IA" },
       { name: "description", content: "Converse com o Especialista Quantara: IA private banking que cruza carteiras de 12 casas e recomenda alocações." },
-      { property: "og:title", content: "Especialista IA · Quantara" },
+      { property: "og:title", content: "Especialista IA" },
       { property: "og:description", content: "IA private banking que cruza carteiras de 12 casas." },
       { property: "og:url", content: "/advisor" },
     ],

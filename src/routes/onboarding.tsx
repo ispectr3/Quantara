@@ -11,7 +11,7 @@ import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/onboarding")({
   component: Onboarding,
-  head: () => ({ meta: [{ title: "Onboarding · Quantara" }] }),
+  head: () => ({ meta: [{ title: "Onboarding" }] }),
 });
 
 const N = 6;

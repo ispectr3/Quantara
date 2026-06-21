@@ -8,9 +8,9 @@ export const Route = createFileRoute("/seguros")({
   component: Seguros,
   head: () => ({
     meta: [
-      { title: "Seguros · Quantara" },
+      { title: "Seguros" },
       { name: "description", content: "Vida, residencial, auto, D&O, Kidnap e patrimoniais: cobertura sob ótica de proteção patrimonial." },
-      { property: "og:title", content: "Seguros · Quantara" },
+      { property: "og:title", content: "Seguros" },
       { property: "og:description", content: "Proteção patrimonial estruturada." },
       { property: "og:url", content: "/seguros" },
     ],
