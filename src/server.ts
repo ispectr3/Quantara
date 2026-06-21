@@ -69,6 +69,13 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      // Polyfill process.env for Cloudflare Workers
+      if (typeof process === "undefined") {
+        (globalThis as any).process = { env: {} };
+      } else if (!process.env) {
+        process.env = {};
+      }
+
       // Copy Cloudflare bindings to process.env for Node-compatibility libraries/functions
       if (env && typeof env === "object") {
         for (const [key, value] of Object.entries(env)) {
